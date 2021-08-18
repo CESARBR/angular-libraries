@@ -1,27 +1,38 @@
-# CesarbrAngularLibraries
+# CESARBR Angular Libraries
+
+Angular workspace for multiple libraries in one single repository. This [article](https://kgotgit.medium.com/monorepo-pattern-setting-up-angular-workspace-for-multiple-applications-in-one-single-repository-4e14bc0d0cc0) gives a good idea of how repository is organized.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
 
-## Development server
+## Libraries
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- [Tooltip](#)
+- [Drag-n-drop](#)
 
-## Code scaffolding
+## Generating a new library
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Run `ng generate library lib-library-name` to generate a new library. Please follow library name standard with the `lib-` prefix for better organization of folders.
 
-## Build
+Each library has its own README, as examples above. Libraries are published to NPM separately and must use scope `@cesarbr` on package's name as follow: `name:"@cesarbr/library-name"`. Please check it out section [Publishing library to NPM](#publishing-library-to-npm)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+For more details take a look at the [Creating libraries guide](https://angular.io/guide/creating-libraries).
 
-## Running unit tests
+## Publishing library to NPM
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+For manually publishing library to NPM, first check if you have been added to [cesarbr organization](https://www.npmjs.com/org/cesarbr) in NPM. Then login with your credentials:  
+``` shell
+npm login
+```
 
-## Running end-to-end tests
+Build the library and go to `dist` folder:
+``` shell
+ng build my-lib
+cd dist/my-lib
+```
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Since packages are scoped, use `--access public` option:
+``` shell
+npm publish --access public
+```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Note: Automatic publish w/Github Actions is under development.
