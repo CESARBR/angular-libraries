@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "start:app-tooltip":"ng serve --project=app-tooltip --port 4000"
   },
   "private": true,
   "dependencies": {

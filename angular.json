@@ -42,6 +42,126 @@
           }
         }
       }
+    },
+    "app-tooltip": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/app-tooltip",
+      "sourceRoot": "projects/app-tooltip/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/app-tooltip",
+            "index": "projects/app-tooltip/src/index.html",
+            "main": "projects/app-tooltip/src/main.ts",
+            "polyfills": "projects/app-tooltip/src/polyfills.ts",
+            "tsConfig": "projects/app-tooltip/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/app-tooltip/src/favicon.ico",
+              "projects/app-tooltip/src/assets"
+            ],
+            "styles": [
+              "projects/app-tooltip/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/app-tooltip/src/environments/environment.ts",
+                  "with": "projects/app-tooltip/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "app-tooltip:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "app-tooltip:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "app-tooltip:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/app-tooltip/src/test.ts",
+            "polyfills": "projects/app-tooltip/src/polyfills.ts",
+            "tsConfig": "projects/app-tooltip/tsconfig.spec.json",
+            "karmaConfig": "projects/app-tooltip/karma.conf.js",
+            "assets": [
+              "projects/app-tooltip/src/favicon.ico",
+              "projects/app-tooltip/src/assets"
+            ],
+            "styles": [
+              "projects/app-tooltip/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/app-tooltip/tsconfig.app.json",
+              "projects/app-tooltip/tsconfig.spec.json",
+              "projects/app-tooltip/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/app-tooltip/e2e/protractor.conf.js",
+            "devServerTarget": "app-tooltip:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "app-tooltip:serve:production"
+            }
+          }
+        }
+      }
     }
   },
   "defaultProject": "lib-tooltip"
