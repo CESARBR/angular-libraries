@@ -4,9 +4,9 @@ Angular workspace for multiple libraries in one single repository. This [article
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
 
-## Libraries
+## Libraries list
 
-- [Tooltip](#)
+- [Tooltip](projects/lib-tooltip/README.md)
 - [Drag-n-drop](#)
 
 ## Generating a new library

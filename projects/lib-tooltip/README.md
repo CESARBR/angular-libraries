@@ -7,7 +7,9 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-
+  <a href="https://github.com/CESARBR/angular-libraries/projects/lib-tooltip">
+    <img src="tooltip.svg" alt="tooltip" width="100" height="100">
+  </a>
   <h3 align="center">Angular Tooltip</h3>
 
   <p align="center">
@@ -15,7 +17,7 @@
     when hover the elements
     <br />
     <br />
-    <a href="https://github.com/CESARBR/angular-tooltip/issues">Report Bug</a>
+    <a href="https://github.com/CESARBR/angular-libraries/issues?q=is%3Aissue+is%3Aopen+%5Btooltip%5D">Report Bug</a>
     ·
     <a href="https://github.com/CESARBR/angular-tooltip/wiki">Wiki</a>
   </p>
@@ -52,6 +54,8 @@
 
 ## About The Project
 
+![GIF demo](tooltipLib.gif)
+
 ### Built With
 
 * [Angular](https://angular.io)
@@ -82,7 +86,7 @@ npm i @cesarbr/angular-tooltip
 ```json
 "dependencies": {
   ...
-  "@cesarbr/angular-tooltip": "^0.1.1"
+  "@cesarbr/angular-tooltip": "^0.1.3"
   ...
 }
 ```
@@ -136,7 +140,7 @@ Usage example
 ```
 ## Roadmap
 
-See the [open issues](https://github.com/CESARBR/angular-tooltip/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/CESARBR/angular-libraries/issues?q=is%3Aissue+is%3Aopen+%5Btooltip%5D) for a list of proposed features (and known issues).
 
 ## Contributing
 You can set up a test enviroment by running the command **npm run build-watch** followed by **ng serve**, the build-watch command will build the tooltip and watch for code changes, ng serve will run the test project with the lib.
