@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "start:app-tooltip":"ng serve --project=app-tooltip --port 4000"
+    "start:app-tooltip": "ng serve --project=app-tooltip --port 4000",
+    "start:app-dragndrop": "ng serve --project=app-dragndrop --port 4100"
   },
   "private": true,
   "dependencies": {

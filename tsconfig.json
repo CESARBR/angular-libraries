@@ -10,6 +10,10 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
+      "lib-dragndrop": [
+        "dist/lib-dragndrop/lib-dragndrop",
+        "dist/lib-dragndrop"
+      ],
       "lib-tooltip": [
         "dist/lib-tooltip/lib-tooltip",
         "dist/lib-tooltip"
