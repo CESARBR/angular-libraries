@@ -1,0 +1,21 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "types": [
+      "node"
+    ]
+  },
+  "exclude": [
+    "../src/test.ts",
+    "../src/**/*.spec.ts",
+    "../projects/**/*.spec.ts",
+    "../projects/app*/**/*",
+  ],
+  "include": [
+    "../src/**/*",
+    "../projects/lib*/**/*",
+  ],
+  "files": [
+    "./typings.d.ts"
+  ]
+}
