@@ -163,6 +163,166 @@
         }
       }
     },
+    "lib-dragndrop": {
+      "projectType": "library",
+      "root": "projects/lib-dragndrop",
+      "sourceRoot": "projects/lib-dragndrop/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/lib-dragndrop/tsconfig.lib.json",
+            "project": "projects/lib-dragndrop/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/lib-dragndrop/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/lib-dragndrop/src/test.ts",
+            "tsConfig": "projects/lib-dragndrop/tsconfig.spec.json",
+            "karmaConfig": "projects/lib-dragndrop/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/lib-dragndrop/tsconfig.lib.json",
+              "projects/lib-dragndrop/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "app-dragndrop": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/app-dragndrop",
+      "sourceRoot": "projects/app-dragndrop/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/app-dragndrop",
+            "index": "projects/app-dragndrop/src/index.html",
+            "main": "projects/app-dragndrop/src/main.ts",
+            "polyfills": "projects/app-dragndrop/src/polyfills.ts",
+            "tsConfig": "projects/app-dragndrop/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/app-dragndrop/src/favicon.ico",
+              "projects/app-dragndrop/src/assets"
+            ],
+            "styles": [
+              "projects/app-dragndrop/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/app-dragndrop/src/environments/environment.ts",
+                  "with": "projects/app-dragndrop/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "app-dragndrop:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "app-dragndrop:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "app-dragndrop:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/app-dragndrop/src/test.ts",
+            "polyfills": "projects/app-dragndrop/src/polyfills.ts",
+            "tsConfig": "projects/app-dragndrop/tsconfig.spec.json",
+            "karmaConfig": "projects/app-dragndrop/karma.conf.js",
+            "assets": [
+              "projects/app-dragndrop/src/favicon.ico",
+              "projects/app-dragndrop/src/assets"
+            ],
+            "styles": [
+              "projects/app-dragndrop/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/app-dragndrop/tsconfig.app.json",
+              "projects/app-dragndrop/tsconfig.spec.json",
+              "projects/app-dragndrop/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/app-dragndrop/e2e/protractor.conf.js",
+            "devServerTarget": "app-dragndrop:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "app-dragndrop:serve:production"
+            }
+          }
+        }
+      }
+    },
     "lib-sidebar": {
       "projectType": "library",
       "root": "projects/lib-sidebar",

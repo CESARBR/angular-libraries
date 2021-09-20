@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { LibSidebarComponent } from '../components/lib-sidebar.component';
 
 @Injectable({
   providedIn: 'root'
@@ -6,11 +7,11 @@ import { Injectable } from '@angular/core';
 
 export class LibSidebarService {
 
-  private sidebars: any[] = [];
+  private sidebars: LibSidebarComponent[] = [];
 
   constructor() { }  
 
-  public add(sidebar: any): boolean {
+  public add(sidebar: LibSidebarComponent): boolean {
     if (!sidebar) return false;
     
     // adding the new sidebar in the sidebars' list

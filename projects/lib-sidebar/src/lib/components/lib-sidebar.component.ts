@@ -38,8 +38,7 @@ export class LibSidebarComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     // remove self from service when is destroyed
-    this.sidebarService.remove(this.id);
-    this.element.remove();
+    this.destroy();
   }
 
   public open() {
@@ -52,5 +51,11 @@ export class LibSidebarComponent implements OnInit, OnDestroy {
     this.isOpened = false;
     const closeEvent = new SidebarCloseEventModel(this.id);
     this.closeSidebar.emit(closeEvent);
+  }
+
+  public destroy() {
+    // remove self from service
+    this.sidebarService.remove(this.id);
+    this.element.remove();
   }
 }

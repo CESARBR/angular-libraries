@@ -1,9 +1,20 @@
 {
-  "name": "lib-sidebar",
+  "name": "@cesarbr/angular-sidebar",
   "version": "0.0.1",
+  "description": "An angular library for sidebars.",
+  "bugs": "https://github.com/CESARBR/angular-libraries/issues?q=is%3Aissue+is%3Aopen+%5Bsidebar%5D+",
+  "homepage": "https://github.com/CESARBR/angular-libraries/projects/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CESARBR/angular-libraries"
+  },
+  "keywords": [
+    "angular",
+    "sidebar"
+  ],
   "peerDependencies": {
-    "@angular/common": "^11.0.9",
-    "@angular/core": "^11.0.9"
+    "@angular/common": "^8.2.14",
+    "@angular/core": "^8.2.14"
   },
   "dependencies": {
     "tslib": "^2.0.0"
