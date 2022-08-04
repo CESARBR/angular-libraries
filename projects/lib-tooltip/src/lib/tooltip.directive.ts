@@ -27,6 +27,9 @@ export class TooltipDirective {
   @Input('wordBreak') wordBreak!: string;
   @Input('textAlign') textAlign!: string;
   @Input('showOnlyIfOverflowEllipsis') showOnlyIfOverflowEllipsis!: boolean;
+  @Input('backgroundColor') backgroundColor: string = "#ffffff";
+  @Input('textColor') textColor: string = "#000000";
+
 
   get isTooltipDestroyed() {
     return this.componentRef && this.componentRef.hostView.destroyed;
@@ -114,7 +117,9 @@ export class TooltipDirective {
       topOffset: this.topOffset,
       customWidth: this.customWidth,
       wordBreak: this.wordBreak,
-      textAlign: this.textAlign
+      textAlign: this.textAlign,
+      backgroundColor: this.backgroundColor,
+      textColor: this.textColor
     };
 
     this.appRef.attachView(this.componentRef.hostView);

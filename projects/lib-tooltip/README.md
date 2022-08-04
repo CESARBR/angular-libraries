@@ -123,6 +123,8 @@ Angular Tooltip has flags where you can customize your component:
 |Vertical tooltip position, positive numbers will push it down, while negative numbers will push it up.|`topOffset`|`0`|`-99999...99999`|`number`|
 |Allows for breaking lines withing the same word.|`wordBreak`|`none`|`Any string`|`string`|
 |Only shows the tooltip if the text is overflowed (not entirely showing up, with '...').|`showOnlyIfOverflowEllipsis`|`false`|`true|false`|`boolean`|
+|Text color.|`textColor`|`black`|`Any string`|`string`|
+|Background color.|`backgroundColor`|`white`|`Any string`|`string`|
 
 Usage example
 ```html
@@ -133,7 +135,9 @@ Usage example
     topOffset="23"
     wordBreak="Cut"
     textAlign="right"
-    showOnlyIfOverflowEllipsis="true">
+    showOnlyIfOverflowEllipsis="true"
+    textColor="black"
+    backgroundColor="white">
     <button
     class="upload-button">Upload Documents</button>
 </div>
