@@ -17,7 +17,6 @@ export class TooltipComponent {
   @HostBinding('style.word-break') hostWordBreak!: string;
   @HostBinding('style.text-align') hostStyleTextAlign!: string;
   @HostBinding('style.color') hostTextColor!: string;
-  @HostBinding('style.--background-color') hostBackgroundColor!: string;
   @HostBinding('class.tooltip-show') hostClassShow!: boolean;
 
   @Input() set show(show: boolean) {
@@ -75,7 +74,9 @@ export class TooltipComponent {
     this.hostStyleLeft = left + 'px';
 
     this.hostTextColor = this.textColor;
-    this.hostBackgroundColor = this.backgroundColor;
+
+    const { style } = this.elementRef.nativeElement;
+    style.setProperty('--background-color', this.backgroundColor);
   }
 
   setCustomStyles() {
