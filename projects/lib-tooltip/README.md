@@ -86,7 +86,7 @@ npm i @cesarbr/angular-tooltip
 ```json
 "dependencies": {
   ...
-  "@cesarbr/angular-tooltip": "^0.1.3"
+  "@cesarbr/angular-tooltip": "^0.1.6"
   ...
 }
 ```
@@ -138,8 +138,9 @@ Usage example
     showOnlyIfOverflowEllipsis="true"
     textColor="black"
     backgroundColor="white">
-    <button
-    class="upload-button">Upload Documents</button>
+    <button class="upload-button">
+      Upload Documents
+    </button>
 </div>
 ```
 ## Roadmap
@@ -163,7 +164,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Project Link: [https://github.com/CESARBR/angular-tooltip](https://github.com/CESARBR/angular-tooltip)
+Project Link: [https://github.com/CESARBR/angular-libraries](https://github.com/CESARBR/angular-libraries)
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [contributors-shield]: https://img.shields.io/github/contributors/CESARBR/angular-tooltip.svg?style=for-the-badge
