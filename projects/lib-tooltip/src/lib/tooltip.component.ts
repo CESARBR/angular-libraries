@@ -77,6 +77,8 @@ export class TooltipComponent {
 
     const { style } = this.elementRef.nativeElement;
     style.setProperty('--background-color', this.backgroundColor);
+
+    this.renderer.addClass(this.elementRef.nativeElement, 'tooltip-shadow');
   }
 
   setCustomStyles() {
