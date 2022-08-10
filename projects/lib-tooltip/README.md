@@ -86,7 +86,7 @@ npm i @cesarbr/angular-tooltip
 ```json
 "dependencies": {
   ...
-  "@cesarbr/angular-tooltip": "^0.1.5"
+  "@cesarbr/angular-tooltip": "^0.1.6"
   ...
 }
 ```
